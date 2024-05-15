@@ -9,3 +9,17 @@ const groceryItems = [
 
 // Cart the will have the added items
 let cart = [];
+
+// Function to display grocery items
+function displayItems() {
+    console.log("Welcome to the Grocery Store! \nPlease see the available items below:\n");
+    console.log("ID\tItems\t\tPrice");
+    console.log("--------------------------------");
+    groceryItems.forEach(item => {
+        console.log(`${item.id}\t${item.name}\t\t$${item.price}`);
+    });
+    console.log("--------------------------------");
+}
+
+// Calling diplayItems function
+displayItems()
