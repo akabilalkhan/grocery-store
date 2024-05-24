@@ -60,53 +60,50 @@ function removeItemFromCart(itemId) {
     const removedItem = cart.splice(itemIndex, 1);
     console.log(`${removedItem[0].name} has been removed from your cart.`);
   } else {
-    console.log("Item not found in cart.");
+    console.log("Item not found in cart. Try again");
   }
 }
 
-// Main function to run the app
-function main() {
-  displayItems();
+// Calling functions to run the app
+displayItems();
 
-  let choice;
-  do {
-    console.log("\nWhat would you like to do?");
-    console.log("1. Add item to cart");
-    console.log("2. View cart");
-    console.log("3. Remove item from cart");
-    console.log("4. Checkout");
-    console.log("5. Exit");
+let choice;
+do {
+  console.log("\nWhat would you like to do?");
+  console.log("1. Add item to cart");
+  console.log("2. View cart");
+  console.log("3. Remove item from cart");
+  console.log("4. Checkout");
+  console.log("5. Exit");
 
-    choice = prompt("Enter your choice (1-4): ");
+  choice = prompt("Enter your choice (1-4): ");
 
-    switch (choice) {
-      case "1":
-        const itemId = parseInt(
-          prompt("Enter the ID of the item you want to add: ")
-        );
-        addItemToCart(itemId);
-        break;
-      case "2":
-        displayCart();
-        break;
-      case "3":
-        const removeItemId = parseInt(
-          prompt("Enter the ID of the item you want to remove: ")
-        );
-        removeItemFromCart(removeItemId);
-        break;
-      case "4":
-        displayCart();
-        if (cart.length === 0) console.log("Please add items to the cart");
-        else console.log("\nPlease pay here");
-        break;
-      case "5":
-        console.log("Thank you for shopping with us!");
-        break;
-      default:
-        console.log("Invalid choice. Please try again.");
-    }
-  } while (choice !== "5");
-}
+  switch (choice) {
+    case "1":
+      const itemId = parseInt(
+        prompt("Enter the ID of the item you want to add: ")
+      );
+      addItemToCart(itemId);
+      break;
+    case "2":
+      displayCart();
+      break;
+    case "3":
+      const removeItemId = parseInt(
+        prompt("Enter the ID of the item you want to remove: ")
+      );
+      removeItemFromCart(removeItemId);
+      break;
+    case "4":
+      displayCart();
+      if (cart.length === 0) console.log("Please add items to the cart");
+      else console.log("\nPlease pay here");
+      break;
+    case "5":
+      console.log("Thank you for shopping with us!");
+      break;
+    default:
+      console.log("Invalid choice. Please try again.");
+  }
+} while (choice !== "5");
 
-main();
