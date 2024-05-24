@@ -76,7 +76,7 @@ do {
   console.log("4. Checkout");
   console.log("5. Exit");
 
-  choice = prompt("Enter your choice (1-4): ");
+  choice = prompt("Enter your choice (1-5): ");
 
   switch (choice) {
     case "1":
